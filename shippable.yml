@@ -1,17 +1,23 @@
 language: node_js
 node_js:
   - "6.10.0"
-build:
-  ci:
-    # Install build deps
-    - shippable_retry npm install
-    - shippable_retry bower install --allow-root
-    # setup dir
-    - mkdir -p shippable/testresults
-    - mkdir -p shippable/coverage
-    # Run tests
-    - npm run build
-    - npm run test
+
+install:
+  - npm install -g karma karma-cli bower gulp
+  - npm install
+  - bower install
+  
+before_script:
+  # setup dir
+  - mkdir -p shippable/testresults
+  - mkdir -p shippable/coverage
+
+script:
+  - npm test
+
+after_success :
+  - echo "Done"
+
 branches:
   only:
   - master
