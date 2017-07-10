@@ -1,8 +1,6 @@
 language: node_js
 node_js:
   - "6.10.0"
-env:
-  - XUNIT_FILE=shippable/testresults/result.xml LOG_XUNIT=true
 build:
   cache: true
   cache_dir_list:
@@ -18,8 +16,8 @@ build:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/coverage
     # Run tests
+    - npm run build
     - npm run test
-    - npm run e2e
 branches:
   only:
   - master

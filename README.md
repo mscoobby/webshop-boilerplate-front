@@ -1,10 +1,6 @@
-[![npm][npm]][npm-url]
-[![angular][angular]][angular-url]
-[![deps][deps]][deps-url]
-[![tests][tests]][tests-url]
-[![builds][builds]][builds-url]
-[![coverage][cover]][cover-url]
-[![licenses][licenses]][licenses-url]
+[![Run Status](https://api.shippable.com/projects/5963b6faf1850807003983b4/badge?branch=master)](https://app.shippable.com/github/mscoobby/webshop-boilerplate-front)
+[![Coverage Badge](https://api.shippable.com/projects/5963b6faf1850807003983b4/coverageBadge?branch=master)](https://app.shippable.com/github/mscoobby/webshop-boilerplate-front)
+
 # eCart
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
