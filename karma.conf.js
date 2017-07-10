@@ -12,18 +12,20 @@ module.exports = function(config) {
             , require('karma-coverage-istanbul-reporter')
             , require('karma-phantomjs-launcher')
             , require('@angular/cli/plugins/karma')
+            , require('karma-junit-reporter')
         ]
         , client: {
             clearContext: false // leave Jasmine Spec Runner output visible in browser
         }
         , coverageIstanbulReporter: {
-            reports: ['html', 'lcovonly']
+            reports: ['html']
             , fixWebpackSourcePaths: true
+            , dir: 'shippable/coverage/'
         }
         , angularCli: {
             environment: 'dev'
         }
-        , reporters: ['progress', 'kjhtml']
+        , reporters: ['dots', 'junit', 'coverage-istanbul']
         , port: 9876
         , colors: true
         , logLevel: config.LOG_INFO
@@ -39,6 +41,12 @@ module.exports = function(config) {
                     ' --remote-debugging-port=9222'
                 ]
             }
+        }
+        , junitReporter: {
+            outputDir: ''
+            , outputFile: 'shippable/testresults/unit.xml'
+            , suite: ''
+            , useBrowserName: false,
         }
         , singleRun: false
     });
