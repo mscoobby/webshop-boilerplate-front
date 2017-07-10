@@ -1,6 +1,6 @@
-language: angular
-angular:
-  - "4.0.0"
+language: node_js
+node_js:
+  - "6.10.0"
 env:
   - XUNIT_FILE=shippable/testresults/result.xml LOG_XUNIT=true
 build:
