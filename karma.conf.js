@@ -35,8 +35,8 @@ module.exports = function(config) {
                 base: 'Chrome'
                 , flags: [
                     '--no-sandbox', // See https://chromium.googlesource.com/chromium/src/+/lkgr/headless/README.md
-                    '--headless'
-                    , '--disable-gpu', // Without a remote debugging port, Google Chrome exits immediately.
+                    '--headless',
+                    '--disable-gpu', // Without a remote debugging port, Google Chrome exits immediately.
                     ' --remote-debugging-port=9222'
                 ]
             }
@@ -45,8 +45,8 @@ module.exports = function(config) {
             outputDir: ''
             , outputFile: 'shippable/testresults/unit.xml'
             , suite: ''
-            , useBrowserName: false,
-        }
+            , useBrowserName: false
+        , }
         , singleRun: false
     });
 };
