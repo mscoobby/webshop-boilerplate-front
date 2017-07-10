@@ -28,5 +28,5 @@ export class ShopComponent implements OnInit {
   ngOnInit() {
   }
 
-  public select = (product = 0) => console.log(this.products[product - 1])
+  public select = (product = 1) => console.log(this.products[product - 1])
 }
