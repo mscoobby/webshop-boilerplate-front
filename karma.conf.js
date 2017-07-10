@@ -10,7 +10,6 @@ module.exports = function(config) {
             , require('karma-chrome-launcher')
             , require('karma-jasmine-html-reporter')
             , require('karma-coverage-istanbul-reporter')
-            , require('karma-phantomjs-launcher')
             , require('@angular/cli/plugins/karma')
             , require('karma-junit-reporter')
         ]
