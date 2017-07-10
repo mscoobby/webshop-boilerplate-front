@@ -1,23 +1,23 @@
+
 language: node_js
+
 node_js:
-  - "7.7.4"
+  - 7.4.0
 
-install:
-  - npm install -g karma karma-cli bower gulp
-  - npm install
-  - bower install --allow-root
+addons:
+  firefox: "29.0"
 
-before_script:
-  # setup dir
-  - mkdir -p shippable/testresults
-  - mkdir -p shippable/coverage
+services:
+  - selenium
 
-script:
-  - npm test
-
-after_success :
-  - echo "Done"
-
-branches:
-  only:
-  - master
+build:
+  cache: true
+  cache_dir_list:
+    - $SHIPPABLE_BUILD_DIR/node_modules
+  ci:
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
+    - shippable_retry npm install
+    - shippable_retry bower install --allow-root
+    - export DISPLAY=:99.0
+    - npm test

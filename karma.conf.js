@@ -25,6 +25,12 @@ module.exports = function(config) {
             environment: 'dev'
         }
         , reporters: ['dots', 'junit', 'coverage-istanbul']
+        , preprocessors: {
+            './src/test.ts': ['@angular/cli']
+        }
+        , mime: {
+            'text/x-typescript': ['ts', 'tsx']
+        }
         , port: 9876
         , colors: true
         , logLevel: config.LOG_INFO
@@ -35,8 +41,8 @@ module.exports = function(config) {
                 base: 'Chrome'
                 , flags: [
                     '--no-sandbox', // See https://chromium.googlesource.com/chromium/src/+/lkgr/headless/README.md
-                    '--headless',
-                    '--disable-gpu', // Without a remote debugging port, Google Chrome exits immediately.
+                    '--headless'
+                    , '--disable-gpu', // Without a remote debugging port, Google Chrome exits immediately.
                     ' --remote-debugging-port=9222'
                 ]
             }
@@ -47,6 +53,6 @@ module.exports = function(config) {
             , suite: ''
             , useBrowserName: false
         , }
-        , singleRun: false
+        , singleRun: true
     });
 };
