@@ -1,3 +1,10 @@
+[![npm][npm]][npm-url]
+[![angular][angular]][angular-url]
+[![deps][deps]][deps-url]
+[![tests][tests]][tests-url]
+[![builds][builds]][builds-url]
+[![coverage][cover]][cover-url]
+[![licenses][licenses]][licenses-url]
 # eCart
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
