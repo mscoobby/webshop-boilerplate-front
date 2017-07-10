@@ -6,7 +6,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test --code-coverage",
+    "test": "ng test",
+    "shippable-test": "ng test --code-coverage --reporters coverage-istanbul,junit,progress --single-run",
+    "shippable-lint": "ng lint --force --type-check",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

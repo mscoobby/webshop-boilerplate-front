@@ -17,14 +17,14 @@ module.exports = function(config) {
             clearContext: false // leave Jasmine Spec Runner output visible in browser
         }
         , coverageIstanbulReporter: {
-            reports: ['html', 'lcovonly', 'text-summary']
+            reports: ['html', 'lcovonly', 'text-summary', 'cobertura']
             , fixWebpackSourcePaths: true
             , dir: 'shippable/codecoverage/'
         }
         , angularCli: {
             environment: 'dev'
         }
-        , reporters: ['dots', 'junit', 'coverage-istanbul']
+        , reporters: config.angularCli && config.angularCli.codeCoverage ? ['progress', 'coverage-istanbul'] : ['progress', 'kjhtml']
         , preprocessors: {
             './src/test.ts': ['@angular/cli']
         }
@@ -35,7 +35,7 @@ module.exports = function(config) {
         , colors: true
         , logLevel: config.LOG_INFO
         , autoWatch: true
-        , browsers: ['ChromeNoSandboxHeadless']
+        , browsers: config.angularCli && config.angularCli.codeCoverage ? ['ChromeNoSandboxHeadless'] : ['Chrome']
         , customLaunchers: {
             ChromeNoSandboxHeadless: {
                 base: 'Chrome'
@@ -53,6 +53,6 @@ module.exports = function(config) {
             , suite: ''
             , useBrowserName: false
         , }
-        , singleRun: true
+        , singleRun: false
     });
 };

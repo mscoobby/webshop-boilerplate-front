@@ -20,4 +20,5 @@ build:
     - shippable_retry npm install
     - shippable_retry bower install --allow-root
     - export DISPLAY=:99.0
-    - npm test
+    - npm run shippable-lint
+    - npm run shippable-test
