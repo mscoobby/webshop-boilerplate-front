@@ -5,6 +5,7 @@ build:
   ci:
     # Install build deps
     - shippable_retry npm install
+    - shippable_retry bower install
     # setup dir
     - mkdir -p shippable/testresults
     - mkdir -p shippable/coverage
