@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-navigation',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  public username: String;
 
-  ngOnInit() {
+  constructor(private authService: AuthService) {
+
   }
 
+  ngOnInit() {
+    this.authService.getCurrentUser().subscribe(user => {
+      this.username = user ? (user.profile && user.profile.name) ? user.profile.name : user.email : '';
+    }, error => {
+      console.error(error)
+    });
+  }
 }

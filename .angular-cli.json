@@ -21,6 +21,7 @@
       "styles": [
         "styles.scss",
         "../bower_components/bootstrap/dist/css/bootstrap.min.css",
+        "../bower_components/bootstrap-social/bootstrap-social.css",
         "../bower_components/font-awesome/css/font-awesome.min.css"
       ],
       "scripts": [],
@@ -58,6 +59,9 @@
   "defaults": {
     "styleExt": "scss",
     "component": {
+    },
+    "serve": {
+      "port": 9001
     }
   }
 }
